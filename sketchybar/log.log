@@ -1,0 +1,2055 @@
+left click
+left click
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: {
+	"name": "volume",
+	"type": "slider",
+	"geometry": {
+		"drawing": "on",
+		"position": "right",
+		"associated_space_mask": 0,
+		"associated_display_mask": 0,
+		"ignore_association": "off",
+		"y_offset": 0,
+		"width": 3,
+		"padding_left": 3,
+		"padding_right": -1,
+		"background": {
+			"drawing": "off",
+			"color": "0x0",
+			"border_color": "0x0",
+			"border_width": 0,
+			"height": 26,
+			"corner_radius": 9,
+			"padding_left": 3,
+			"padding_right": 3,
+			"y_offset": 0,
+			"clip": 0.000000,
+			"image": {
+				"value": "(null)",
+				"drawing": "off",
+				"scale": 1.000000
+			},
+			"shadow": {
+				"drawing": "off",
+				"color": "0xff000000",
+				"angle": 30,
+				"distance": 5
+			}
+		}
+	},
+	"icon": {
+		"value": "",
+		"drawing": "off",
+		"highlight": "off",
+		"color": "0xffffffff",
+		"highlight_color": "0xff000000",
+		"padding_left": 4,
+		"padding_right": 4,
+		"y_offset": 0,
+		"font": "SFMono Nerd Font:Bold:14.0",
+		"width": 0,
+		"align": "left",
+		"background": {
+			"drawing": "off",
+			"color": "0x0",
+			"border_color": "0x0",
+			"border_width": 0,
+			"height": 0,
+			"corner_radius": 0,
+			"padding_left": 0,
+			"padding_right": 0,
+			"y_offset": 0,
+			"clip": 0.000000,
+			"image": {
+				"value": "(null)",
+				"drawing": "off",
+				"scale": 1.000000
+			},
+			"shadow": {
+				"drawing": "off",
+				"color": "0xff000000",
+				"angle": 30,
+				"distance": 5
+			}
+		},
+		"shadow": {
+			"drawing": "off",
+			"color": "0xff000000",
+			"angle": 30,
+			"distance": 5
+		}
+	},
+	"label": {
+		"value": "",
+		"drawing": "off",
+		"highlight": "off",
+		"color": "0xffffffff",
+		"highlight_color": "0xff000000",
+		"padding_left": 4,
+		"padding_right": 4,
+		"y_offset": 0,
+		"font": "SF Pro:Bold:14.0",
+		"width": 0,
+		"align": "left",
+		"background": {
+			"drawing": "off",
+			"color": "0x0",
+			"border_color": "0x0",
+			"border_width": 0,
+			"height": 0,
+			"corner_radius": 0,
+			"padding_left": 0,
+			"padding_right": 0,
+			"y_offset": 0,
+			"clip": 0.000000,
+			"image": {
+				"value": "(null)",
+				"drawing": "off",
+				"scale": 1.000000
+			},
+			"shadow": {
+				"drawing": "off",
+				"color": "0xff000000",
+				"angle": 30,
+				"distance": 5
+			}
+		},
+		"shadow": {
+			"drawing": "off",
+			"color": "0xff000000",
+			"angle": 30,
+			"distance": 5
+		}
+	},
+	"scripting": {
+		"script": "/Users/peter/.config/sketchybar/plugins/volume.sh",
+		"click_script": "(null)",
+		"update_freq": 0,
+		"update_mask": 1136,
+		"updates": "on"
+	},
+	"bounding_rects": {
+		"display-1": {
+			"origin": [ 1385.000000, 10.000000 ],
+			"size": [ 0.000000, 32.000000 ]
+		}
+	},
+	"slider": {
+		"highlight_color": "0xff8aadf4",
+		"percentage": "50",
+		"width": "0",
+		"background": {
+			"drawing": "on",
+			"color": "0xff494d64",
+			"border_color": "0x0",
+			"border_width": 0,
+			"height": 5,
+			"corner_radius": 3,
+			"padding_left": 0,
+			"padding_right": 0,
+			"y_offset": 0,
+			"clip": 0.000000,
+			"image": {
+				"value": "(null)",
+				"drawing": "off",
+				"scale": 1.000000
+			}
+		},
+		"knob": {
+			"value": "􀀁",
+			"drawing": "off",
+			"highlight": "off",
+			"color": "0xffffffff",
+			"highlight_color": "0xff000000",
+			"padding_left": 0,
+			"padding_right": 0,
+			"y_offset": 0,
+			"font": "Hack Nerd Font:Bold:14.0",
+			"width": 0,
+			"align": "left",
+			"background": {
+				"drawing": "off",
+				"color": "0x0",
+				"border_color": "0x0",
+				"border_width": 0,
+				"height": 0,
+				"corner_radius": 0,
+				"padding_left": 0,
+				"padding_right": 0,
+				"y_offset": 0,
+				"clip": 0.000000,
+				"image": {
+					"value": "(null)",
+					"drawing": "off",
+					"scale": 1.000000
+				},
+				"shadow": {
+					"drawing": "off",
+					"color": "0xff000000",
+					"angle": 30,
+					"distance": 5
+				}
+			},
+			"shadow": {
+				"drawing": "off",
+				"color": "0xff000000",
+				"angle": 30,
+				"distance": 5
+			}
+		}
+	}
+}
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+manually: 
+in toggle detail, init width = 
+left click
+which jq: 
+in toggle detail, init width = 
+left click
+which jq: 
+in toggle detail, init width = 
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 93
+left click
+which jq: /Users/peter/opt/anaconda3/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: 
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 90
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 93
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 75
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 75
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click

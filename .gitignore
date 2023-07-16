@@ -1,0 +1,13 @@
+StardewValley
+*.bak
+.mono
+firebase-tools.json
+filezilla
+.DS_Store
+github-copilot
+raycast
+qBitTorrent
+sanity
+**/example/*
+ftplugin
+yarn
