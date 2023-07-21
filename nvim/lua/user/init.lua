@@ -306,9 +306,30 @@ local config = {
                         "christoomey/vim-tmux-navigator",
                         lazy = false
                 },
+                -- {
+                --         "jamestthompson3/nvim-remote-containers",
+                --         lazy = false
+                -- },
                 {
-                        "jamestthompson3/nvim-remote-containers",
+                        "esensar/nvim-dev-container",
+                        dependencies = {
+                                "nvim-treesitter/nvim-treesitter"
+                        },
+                        lazy = false,
+                        opts = function ()
+                                require("devcontainer").setup{}
+                        end
+                },
+                {
+                        "termoshtt/toggl.nvim",
                         lazy = false
+                },
+                {
+                        "anuvyklack/pretty-fold.nvim",
+                        opts = function()
+                                require('pretty-fold').setup()
+                        end,
+                        lazy = false,
                 },
 
                 -- All other entries override the require("<key>").setup({...}) call for default plugins

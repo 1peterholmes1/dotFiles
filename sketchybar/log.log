@@ -2053,3 +2053,14 @@ left click
 which jq: /usr/local/bin/jq
 in toggle detail, init width = 100
 right click or shift click
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 0
+width == 0
+in detail on
+sliderwidth = 100
+left click
+which jq: /usr/local/bin/jq
+in toggle detail, init width = 100
+right click or shift click
+right click or shift click

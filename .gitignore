@@ -11,3 +11,5 @@ sanity
 **/example/*
 ftplugin
 yarn
+*.log
+tmux/plugins/*
