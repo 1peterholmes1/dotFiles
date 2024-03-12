@@ -1,2 +1,2 @@
-require("peter.remap")
 require("peter.set")
+require("peter.remap")

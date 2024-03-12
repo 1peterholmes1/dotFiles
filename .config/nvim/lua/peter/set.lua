@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -21,8 +22,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
-vim.g.mapleader = " "
 
 vim.opt.cmdheight = 0
 vim.opt.cursorline = true
