@@ -5,6 +5,26 @@ return {
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'onsails/lspkind.nvim' },
+    {
+        'zbirenbaum/copilot.lua',
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require('copilot').setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false }
+            })
+        end
+    },
+    {
+        'zbirenbaum/copilot-cmp.lua',
+        dependencies = { 'zbirenbaum/copilot.lua' },
+        config = function()
+            require('copilot_cmp').setup()
+        end
+    },
     -- TODO: Fix Navic
     -- {
     --     "SmiteshP/nvim-navic",
@@ -28,6 +48,10 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/nvim-cmp',
             'L3MON4D3/LuaSnip',
+            'hrsh7th/cmp-buffer',
+            'zbirenbaum/copilot.lua',
+            'zbirenbaum/copilot-cmp.lua',
+            'onsails/lspkind.nvim'
         },
         config = function()
             local lsp_zero = require('lsp-zero')
@@ -81,6 +105,14 @@ return {
                 },
             })
 
+            local lspkind = require('lspkind')
+
+            lspkind.init({
+                symbol_map = {
+                    Copilot = ''
+                }
+            })
+
             local cmp = require('cmp')
             local cmp_action = lsp_zero.cmp_action()
 
@@ -96,7 +128,19 @@ return {
                     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                     ['<C-Space>'] = cmp.mapping.complete(),
-                })
+                }),
+                sources = {
+                    { name = "nvim_lsp" },
+                    { name = "copilot" },
+                    { name = "luasnip" },
+                    { name = "buffer" }
+
+                },
+                formatting = {
+                    format = lspkind.cmp_format({
+                        mode = 'symbol',
+                    })
+                }
             })
         end
     },
