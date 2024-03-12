@@ -11,6 +11,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+
 
 vim.opt.termguicolors = true
 
@@ -21,3 +23,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
+
+vim.opt.cmdheight = 0
+vim.opt.cursorline = true
