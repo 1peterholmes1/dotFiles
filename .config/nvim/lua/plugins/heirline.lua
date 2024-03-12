@@ -459,8 +459,26 @@ return {
             local Align = { provider = '%=' }
             local Space = { provider = " " }
 
+            print(vim.bufname)
             local DefaultStatusLine = {
-                ViMode, Space, Git, Space, Diagnostics, Align, LSPActive, Space, FileNameBlock, Space, FileType, Space,
+                -- FIXME: This isn't working
+                condition = function()
+                    return not conditions.buffer_matches({
+                        filetype = { "neo-tree", "NEO-TREE" },
+                    })
+                end,
+                ViMode,
+                Space,
+                Git,
+                Space,
+                Diagnostics,
+                Align,
+                LSPActive,
+                Space,
+                FileNameBlock,
+                Space,
+                FileType,
+                Space,
                 ScrollBar
             }
 
