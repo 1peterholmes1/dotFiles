@@ -73,6 +73,9 @@ return {
                         filter = allow_format({ 'lua_ls', 'rust_analyzer', 'prettier' })
                     })
                 end, opts)
+                vim.keymap.set({ 'n', 'v' }, '<leader>la', function()
+                    vim.lsp.buf.code_action()
+                end, opts)
 
                 lsp_zero.buffer_autoformat()
             end)
@@ -83,12 +86,35 @@ return {
                 hint = '󰌵',
                 info = '󰙎'
             })
+            local util = require 'lspconfig.util'
+            local function get_typescript_server_path(root_dir)
+                local global_ts = '/Users/peter/.volta/tools/shared/typescript/lib'
+                -- Alternative location if installed as root:
+                -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+                local found_ts = ''
+                local function check_dir(path)
+                    found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
+                    if util.path.exists(found_ts) then
+                        return path
+                    end
+                end
+                if util.search_ancestors(root_dir, check_dir) then
+                    return found_ts
+                else
+                    return global_ts
+                end
+            end
 
+            -- require 'lspconfig'.volar.setup {
+            --     on_new_config = function(new_config, new_root_dir)
+            --         new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+            --     end,
+            -- }
             -- to learn how to use mason.nvim with lsp-zero
             -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
             require('mason').setup({})
             require('mason-lspconfig').setup({
-                ensure_installed = { 'tsserver', 'eslint' },
+                ensure_installed = { 'tsserver', 'eslint', 'volar' },
                 handlers = {
                     lsp_zero.default_setup,
                     lua_ls = function()
@@ -102,6 +128,31 @@ return {
                             }
                         })
                     end,
+                    -- tsserver = function()
+                    --     require('lspconfig').tsserver.setup {
+                    --         init_options = {
+                    --             plugins = {
+                    --                 {
+                    --                     name = "@vue/typescript-plugin",
+                    --                     languages = { 'javascript', 'typescript', 'vue' },
+                    --                     location = '/Users/peter/.volta/tools/shared/@vue/typescript-plugin',
+                    --                 }
+                    --             }
+                    --         },
+                    --         filetypes = {
+                    --             'javascript',
+                    --             'typescript',
+                    --             'vue'
+                    --         }
+                    --     }
+                    -- end,
+                    -- volar = function()
+                    --     require('lspconfig').volar.setup {
+                    --         on_new_config = function(new_config, new_root_dir)
+                    --             new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+                    --         end
+                    --     }
+                    -- end,
                 },
             })
 
