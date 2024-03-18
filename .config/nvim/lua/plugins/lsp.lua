@@ -76,6 +76,9 @@ return {
                 vim.keymap.set({ 'n', 'v' }, '<leader>la', function()
                     vim.lsp.buf.code_action()
                 end, opts)
+                vim.keymap.set('n', '<leader>ld', function()
+                    vim.diagnostic.open_float()
+                end, opts)
 
                 lsp_zero.buffer_autoformat()
             end)

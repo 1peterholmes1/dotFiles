@@ -371,7 +371,7 @@ return {
                 update = { "DiagnosticChanged", "BufEnter" },
 
                 {
-                    provider = "![",
+                    provider = "[",
                 },
                 {
                     provider = function(self)
