@@ -80,6 +80,14 @@ return {
                     vim.diagnostic.open_float()
                 end, opts)
 
+                vim.keymap.set('n', '<leader>lh', function()
+                    vim.lsp.buf.signature_help()
+                end, opts)
+
+                vim.keymap.set('n', '<leader>lr', function()
+                    vim.lsp.buf.rename()
+                end, opts)
+
                 lsp_zero.buffer_autoformat()
             end)
 
