@@ -14,25 +14,29 @@ return {
             local scheme = require('catppuccin.palettes').get_palette 'mocha'
             local conditions = require("heirline.conditions")
             local utils = require("heirline.utils")
-            -- local colors = {
-            --     bright_bg = utils.get_highlight("Folded").bg,
-            --     bright_fg = utils.get_highlight("Folded").fg,
-            --     red = utils.get_highlight("DiagnosticError").fg,
-            --     dark_red = utils.get_highlight("DiffDelete").bg,
-            --     green = utils.get_highlight("String").fg,
-            --     blue = utils.get_highlight("Function").fg,
-            --     gray = utils.get_highlight("NonText").fg,
-            --     orange = utils.get_highlight("Constant").fg,
-            --     purple = utils.get_highlight("Statement").fg,
-            --     cyan = utils.get_highlight("Special").fg,
-            --     diag_warn = utils.get_highlight("DiagnosticWarn").fg,
-            --     diag_error = utils.get_highlight("DiagnosticError").fg,
-            --     diag_hint = utils.get_highlight("DiagnosticHint").fg,
-            --     diag_info = utils.get_highlight("DiagnosticInfo").fg,
-            --     git_del = utils.get_highlight("diffDeleted").fg,
-            --     git_add = utils.get_highlight("diffAdded").fg,
-            --     git_change = utils.get_highlight("diffChanged").fg,
-            -- }
+            local function setup_colors()
+                return {
+                    bright_bg = utils.get_highlight("Folded").bg,
+                    bright_fg = utils.get_highlight("Folded").fg,
+                    red = utils.get_highlight("DiagnosticError").fg,
+                    dark_red = utils.get_highlight("DiffDelete").bg,
+                    green = utils.get_highlight("String").fg,
+                    blue = utils.get_highlight("Function").fg,
+                    gray = utils.get_highlight("NonText").fg,
+                    orange = utils.get_highlight("Constant").fg,
+                    purple = utils.get_highlight("Statement").fg,
+                    cyan = utils.get_highlight("Special").fg,
+                    diag_warn = utils.get_highlight("DiagnosticWarn").fg,
+                    diag_error = utils.get_highlight("DiagnosticError").fg,
+                    diag_hint = utils.get_highlight("DiagnosticHint").fg,
+                    diag_info = utils.get_highlight("DiagnosticInfo").fg,
+                    git_del = utils.get_highlight("diffDeleted").fg,
+                    git_add = utils.get_highlight("diffAdded").fg,
+                    git_change = utils.get_highlight("diffChanged").fg,
+                }
+            end
+
+            utils.on_colorscheme(setup_colors)
             -- require('heirline').load_colors(colors)
             local ViMode = {
                 -- get vim current mode, this information will be required by the provider
@@ -105,7 +109,7 @@ return {
                 -- control the padding and make sure our string is always at least 2
                 -- characters long. Plus a nice Icon.
                 provider = function(self)
-                    return "  %(" .. self.mode_names[self.mode] .. "%) "
+                    return "  %(" .. self.mode_names[self.mode] .. "%)"
                 end,
                 -- Same goes for the highlight. Now the foreground will change according to the current mode.
                 hl = function(self)
@@ -121,12 +125,16 @@ return {
                         vim.cmd("redrawstatus")
                     end),
                 },
+                {
+                    provider = " ",
+                    hl = function(self)
+                        local mode = self.mode:sub(1, 1)
+                        return { fg = self.mode_colors[mode], bg = "gray" }
+                    end
+                }
             }
 
             local SearchCount = {
-                condition = function()
-                    return vim.v.hlsearch ~= 0 and vim.o.cmdheight == 0
-                end,
                 init = function(self)
                     local ok, search = pcall(vim.fn.searchcount)
                     if ok and search.total then
@@ -137,6 +145,20 @@ return {
                     local search = self.search
                     return string.format(" %d/%d", search.current, math.min(search.total, search.maxcount))
                 end,
+                hl = { fg = "black", bg = "green" }
+            }
+
+            local SearchCountBlock = {
+                condition = function()
+                    return vim.v.hlsearch ~= 0 and vim.o.cmdheight == 0
+                end,
+                {
+                    provider = " ", hl = { bg = "green", fg = "black" }
+                },
+                SearchCount,
+                {
+                    provider = " ", hl = { bg = "green", fg = "black" }
+                }
             }
 
             local FileNameBlock = {
@@ -147,20 +169,6 @@ return {
             }
             -- We can now define some children separately and add them later
 
-            local FileIcon = {
-                init = function(self)
-                    local filename = self.filename
-                    local extension = vim.fn.fnamemodify(filename, ":e")
-                    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension,
-                        { default = true })
-                end,
-                provider = function(self)
-                    return self.icon and (self.icon .. " ")
-                end,
-                hl = function(self)
-                    return { fg = self.icon_color }
-                end
-            }
 
             local FileName = {
                 provider = function(self)
@@ -184,14 +192,14 @@ return {
                     condition = function()
                         return vim.bo.modified
                     end,
-                    provider = "[+]",
+                    provider = " [+]",
                     hl = { fg = "green" },
                 },
                 {
                     condition = function()
                         return not vim.bo.modifiable or vim.bo.readonly
                     end,
-                    provider = "",
+                    provider = " ",
                     hl = { fg = "orange" },
                 },
             }
@@ -211,23 +219,49 @@ return {
             }
 
             -- let's add the children to our FileNameBlock component
-            FileNameBlock = utils.insert(FileNameBlock,
-                FileIcon,
+            FileNameBlock = utils.insert(
+                FileNameBlock,
                 utils.insert(FileNameModifer, FileName), -- a new table where FileName is a child of FileNameModifier
                 FileFlags,
                 { provider = '%<' }                      -- this means that the statusline is cut here when there's not enough space
             )
 
+            -- local FileIcon = {
+            --     provider = function(self)
+            --         return self.icon and (self.icon .. " ")
+            --     end,
+            --     hl = function(self)
+            --         return { fg = self.icon_color }
+            --     end
+            -- }
+
             local FileType = {
-                provider = function()
-                    return string.upper(vim.bo.filetype)
+                init = function(self)
+                    local filename = self.filename
+                    local extension = vim.fn.fnamemodify(filename, ":e")
+                    self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension,
+                        { default = true })
                 end,
-                hl = { fg = utils.get_highlight("Type").fg, bold = true },
+                provider = function(self)
+                    return ((self.icon and (self.icon .. " ")) .. string.upper(vim.bo.filetype))
+                end,
+                hl = function(self)
+                    return { fg = self.icon_color }
+                end,
             }
+
+            local Ruler = {
+                -- %l = current line number
+                -- %L = number of lines in the buffer
+                -- %c = column number
+                -- %P = percentage through file of displayed window
+                provider = "%7(%l/%3L%):%2c %P",
+            }
+
             -- I take no credits for this! :lion:
             local ScrollBar = {
                 static = {
-                    sbar = { '█', '▇', '▆', '▅', '▄', '▃', '▂', '▁' }
+                    sbar = { '▇', '▆', '▅', '▄', '▃', '▂', '▁', ' ' }
                     -- Another variant, because the more choice the better.
                     -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
                 },
@@ -237,7 +271,7 @@ return {
                     local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
                     return string.rep(self.sbar[i], 2)
                 end,
-                hl = { fg = "none", bg = "blue" },
+                hl = { fg = "black", bg = "blue" },
             }
 
             local LSPActive = {
@@ -262,13 +296,14 @@ return {
             -- Awesome plugin
 
             -- The easy way.
-            -- local Navic = {
-            --     condition = function() return require("nvim-navic").is_available() end,
-            --     provider = function()
-            --         return require("nvim-navic").get_location({ highlight = true })
-            --     end,
-            --     update = 'CursorMoved'
-            -- }
+            local Navic = {
+                condition = function() return require("nvim-navic").is_available() end,
+                provider = function()
+                    print(require('nvim-navic').get_location())
+                    return require("nvim-navic").get_location({ highlight = true })
+                end,
+                update = 'CursorMoved'
+            }
             --
             -- -- Full nerd (with icon colors and clickable elements)!
             -- -- works in multi window, but does not support flexible components (yet ...)
@@ -387,35 +422,37 @@ return {
                 update = { "DiagnosticChanged", "BufEnter" },
 
                 {
-                    provider = "[ ",
+                    provider = " ",
+                    hl = { bg = "gray", fg = "black" }
                 },
                 {
                     provider = function(self)
                         -- 0 is just another output, we can decide to print it or not!
                         return self.errors > 0 and (self.error_icon .. self.errors .. " ")
                     end,
-                    hl = { fg = "red" },
+                    hl = { fg = "diag_error", bg = "gray" },
                 },
                 {
                     provider = function(self)
                         return self.warnings > 0 and (self.warn_icon .. self.warnings .. " ")
                     end,
-                    hl = { fg = "orange" },
+                    hl = { fg = "diag_warn", bg = "gray" },
                 },
                 {
                     provider = function(self)
                         return self.info > 0 and (self.info_icon .. self.info .. " ")
                     end,
-                    hl = { fg = "blue" },
+                    hl = { fg = "diag_info", bg = "gray" },
                 },
                 {
                     provider = function(self)
                         return self.hints > 0 and (self.hint_icon .. self.hints)
                     end,
-                    hl = { fg = "yellow" },
+                    hl = { fg = "diag_hint", bg = "gray" },
                 },
                 {
-                    provider = " ]",
+                    provider = " ",
+                    hl = { fg = "black", bg = "gray" }
                 },
             }
 
@@ -428,8 +465,7 @@ return {
                         self.status_dict.changed ~= 0
                 end,
 
-                hl = { fg = "orange" },
-
+                hl = { fg = "orange", bg = "gray" },
 
                 { -- git branch name
                     provider = function(self)
@@ -447,21 +483,21 @@ return {
                 {
                     provider = function(self)
                         local count = self.status_dict.added or 0
-                        return count > 0 and (" +" .. count)
+                        return count > 0 and ("+" .. count)
                     end,
                     hl = { fg = "green" },
                 },
                 {
                     provider = function(self)
                         local count = self.status_dict.removed or 0
-                        return count > 0 and (" -" .. count)
+                        return count > 0 and ("-" .. count)
                     end,
                     hl = { fg = "red" },
                 },
                 {
                     provider = function(self)
                         local count = self.status_dict.changed or 0
-                        return count > 0 and (" ~" .. count)
+                        return count > 0 and ("~" .. count)
                     end,
                     hl = { fg = "orange" },
                 },
@@ -469,8 +505,12 @@ return {
                     condition = function(self)
                         return self.has_changes
                     end,
-                    provider = " )",
+                    provider = ")",
                 },
+                {
+                    provider = " ",
+                    hl = { fg = "black", bg = "gray" }
+                }
             }
             local Align = { provider = '%=' }
             local Space = { provider = "  " }
@@ -483,24 +523,26 @@ return {
                     })
                 end,
                 ViMode,
-                Space,
                 Git,
-                Space,
-                Diagnostics,
-                Align,
-                SearchCount,
-                Align,
-                LSPActive,
                 Space,
                 FileNameBlock,
                 Space,
+                Diagnostics,
+                Align,
+                SearchCountBlock,
+                Align,
+                LSPActive,
+                Space,
                 FileType,
+                Space,
+                Ruler,
                 Space,
                 ScrollBar
             }
 
             require('heirline').setup({
-                statusline = DefaultStatusLine
+                statusline = DefaultStatusLine,
+                winbar = { Navic }
             })
         end
     },

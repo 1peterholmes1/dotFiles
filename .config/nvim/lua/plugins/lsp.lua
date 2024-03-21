@@ -26,18 +26,9 @@ return {
         end
     },
     -- TODO: Fix Navic
-    -- {
-    --     "SmiteshP/nvim-navic",
-    --     dependencies = {
-    --         'neovim/nvim-lspconfig'
-    --     },
-    --     config = function()
-    --         local navic = require('navic')
-    --         local navic = require("nvim-navic")
-    --
-    --
-    --     end
-    -- },
+    {
+        "SmiteshP/nvim-navic",
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -51,10 +42,12 @@ return {
             'hrsh7th/cmp-buffer',
             'zbirenbaum/copilot.lua',
             'zbirenbaum/copilot-cmp.lua',
-            'onsails/lspkind.nvim'
+            'onsails/lspkind.nvim',
+            "SmiteshP/nvim-navic",
         },
         config = function()
             local lsp_zero = require('lsp-zero')
+            local navic = require('nvim-navic')
 
             local function allow_format(servers)
                 return function(client) return vim.tbl_contains(servers, client.name) end
@@ -87,6 +80,8 @@ return {
                 vim.keymap.set('n', '<leader>lr', function()
                     vim.lsp.buf.rename()
                 end, opts)
+
+                navic.attach(client, bufnr)
 
                 lsp_zero.buffer_autoformat()
             end)
