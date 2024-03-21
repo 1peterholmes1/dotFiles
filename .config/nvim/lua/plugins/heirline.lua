@@ -46,34 +46,34 @@ return {
                 -- them at initialisation time.
                 static = {
                     mode_names = { -- change the strings if you like it vvvvverbose!
-                        n = "N",
-                        no = "N?",
-                        nov = "N?",
-                        noV = "N?",
-                        ["no\22"] = "N?",
-                        niI = "Ni",
-                        niR = "Nr",
-                        niV = "Nv",
-                        nt = "Nt",
-                        v = "V",
-                        vs = "Vs",
-                        V = "V_",
-                        Vs = "Vs",
-                        ["\22"] = "^V",
-                        ["\22s"] = "^V",
-                        s = "S",
-                        S = "S_",
-                        ["\19"] = "^S",
-                        i = "I",
-                        ic = "Ic",
-                        ix = "Ix",
-                        R = "R",
-                        Rc = "Rc",
-                        Rx = "Rx",
-                        Rv = "Rv",
-                        Rvc = "Rv",
-                        Rvx = "Rv",
-                        c = "C",
+                        n = "NORMAL",
+                        no = "NORMAL?",
+                        nov = "NORMAL?",
+                        noV = "NORMAL?",
+                        ["no\22"] = "NORMAL?",
+                        niI = "NORMALi",
+                        niR = "NORMALr",
+                        niV = "NORMALv",
+                        nt = "NORMALt",
+                        v = "VISUAL",
+                        vs = "VISUALs",
+                        V = "VISUAL_",
+                        Vs = "VISUALs",
+                        ["\22"] = "^VISUAL",
+                        ["\22s"] = "^VISUAL",
+                        s = "SELECT",
+                        S = "SELECT_",
+                        ["\19"] = "^SELECT",
+                        i = "INSERT",
+                        ic = "INSERTc",
+                        ix = "INSERTx",
+                        R = "REPLACE",
+                        Rc = "REPLACEc",
+                        Rx = "REPLACEx",
+                        Rv = "REPLACEv",
+                        Rvc = "REPLACEv",
+                        Rvx = "REPLACEv",
+                        c = "COMMAND",
                         cv = "Ex",
                         r = "...",
                         rm = "M",
@@ -105,12 +105,12 @@ return {
                 -- control the padding and make sure our string is always at least 2
                 -- characters long. Plus a nice Icon.
                 provider = function(self)
-                    return " %2(" .. self.mode_names[self.mode] .. "%)"
+                    return "  %(" .. self.mode_names[self.mode] .. "%) "
                 end,
                 -- Same goes for the highlight. Now the foreground will change according to the current mode.
                 hl = function(self)
                     local mode = self.mode:sub(1, 1) -- get only the first mode character
-                    return { fg = self.mode_colors[mode], bold = true, }
+                    return { bg = self.mode_colors[mode], bold = true, fg = "black" }
                 end,
                 -- Re-evaluate the component only on ModeChanged event!
                 -- Also allows the statusline to be re-evaluated when entering operator-pending mode
@@ -121,6 +121,22 @@ return {
                         vim.cmd("redrawstatus")
                     end),
                 },
+            }
+
+            local SearchCount = {
+                condition = function()
+                    return vim.v.hlsearch ~= 0 and vim.o.cmdheight == 0
+                end,
+                init = function(self)
+                    local ok, search = pcall(vim.fn.searchcount)
+                    if ok and search.total then
+                        self.search = search
+                    end
+                end,
+                provider = function(self)
+                    local search = self.search
+                    return string.format(" %d/%d", search.current, math.min(search.total, search.maxcount))
+                end,
             }
 
             local FileNameBlock = {
@@ -211,7 +227,7 @@ return {
             -- I take no credits for this! :lion:
             local ScrollBar = {
                 static = {
-                    sbar = { '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█' }
+                    sbar = { '█', '▇', '▆', '▅', '▄', '▃', '▂', '▁' }
                     -- Another variant, because the more choice the better.
                     -- sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
                 },
@@ -221,7 +237,7 @@ return {
                     local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
                     return string.rep(self.sbar[i], 2)
                 end,
-                hl = { fg = "blue", bg = "none" },
+                hl = { fg = "none", bg = "blue" },
             }
 
             local LSPActive = {
@@ -371,7 +387,7 @@ return {
                 update = { "DiagnosticChanged", "BufEnter" },
 
                 {
-                    provider = "[",
+                    provider = "[ ",
                 },
                 {
                     provider = function(self)
@@ -399,7 +415,7 @@ return {
                     hl = { fg = "yellow" },
                 },
                 {
-                    provider = "]",
+                    provider = " ]",
                 },
             }
 
@@ -426,26 +442,26 @@ return {
                     condition = function(self)
                         return self.has_changes
                     end,
-                    provider = "("
+                    provider = " ("
                 },
                 {
                     provider = function(self)
                         local count = self.status_dict.added or 0
-                        return count > 0 and ("+" .. count)
+                        return count > 0 and (" +" .. count)
                     end,
                     hl = { fg = "green" },
                 },
                 {
                     provider = function(self)
                         local count = self.status_dict.removed or 0
-                        return count > 0 and ("-" .. count)
+                        return count > 0 and (" -" .. count)
                     end,
                     hl = { fg = "red" },
                 },
                 {
                     provider = function(self)
                         local count = self.status_dict.changed or 0
-                        return count > 0 and ("~" .. count)
+                        return count > 0 and (" ~" .. count)
                     end,
                     hl = { fg = "orange" },
                 },
@@ -453,18 +469,17 @@ return {
                     condition = function(self)
                         return self.has_changes
                     end,
-                    provider = ")",
+                    provider = " )",
                 },
             }
             local Align = { provider = '%=' }
-            local Space = { provider = " " }
+            local Space = { provider = "  " }
 
-            print(vim.bufname)
             local DefaultStatusLine = {
                 -- FIXME: This isn't working
                 condition = function()
                     return not conditions.buffer_matches({
-                        filetype = { "neo-tree", "NEO-TREE" },
+                        filetype = { "neo%-tree", "NEO-TREE", "filesystem" },
                     })
                 end,
                 ViMode,
@@ -472,6 +487,8 @@ return {
                 Git,
                 Space,
                 Diagnostics,
+                Align,
+                SearchCount,
                 Align,
                 LSPActive,
                 Space,
