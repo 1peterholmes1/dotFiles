@@ -4,7 +4,7 @@ return {
         dependencies = {
             'catppuccin/nvim',
             'nvim-tree/nvim-web-devicons',
-            'SmiteshP/nvim-navic',
+            -- 'SmiteshP/nvim-navic',
             'lewis6991/gitsigns.nvim',
             'VonHeikemen/lsp-zero.nvim',
         },
@@ -296,14 +296,14 @@ return {
             -- Awesome plugin
 
             -- The easy way.
-            local Navic = {
-                condition = function() return require("nvim-navic").is_available() end,
-                provider = function()
-                    print(require('nvim-navic').get_location())
-                    return require("nvim-navic").get_location({ highlight = true })
-                end,
-                update = 'CursorMoved'
-            }
+            -- local Navic = {
+            --     condition = function() return require("nvim-navic").is_available() end,
+            --     provider = function()
+            --         print(require('nvim-navic').get_location())
+            --         return require("nvim-navic").get_location({ highlight = true })
+            --     end,
+            --     update = 'CursorMoved'
+            -- }
             --
             -- -- Full nerd (with icon colors and clickable elements)!
             -- -- works in multi window, but does not support flexible components (yet ...)
@@ -542,7 +542,7 @@ return {
 
             require('heirline').setup({
                 statusline = DefaultStatusLine,
-                winbar = { Navic }
+                -- winbar = { Navic }
             })
         end
     },
