@@ -104,4 +104,5 @@ alias pn=pnpm
 alias laz=lazygit
 export VOLTA_HOME="$HOME/.volta"
 export PATH="/Users/peter/Library/Python/3.9/bin:$VOLTA_HOME/bin:$PATH"
+export EDITOR=nvim
 eval "$(zoxide init --cmd cd zsh)"
