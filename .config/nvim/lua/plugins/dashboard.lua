@@ -19,7 +19,13 @@ return {
                         [[                                                                       ]],
                     },
                     project = { enable = false },
-                    mru = { cwd_only = true }
+                    mru = { cwd_only = true },
+                    shortcut = {
+                        { desc = 'Find Files ', group = 'Label', action = 'Telescope find_files', key = 'f' },
+                        { desc = 'Quit ',       group = 'Label', action = 'q',                    key = 'q' },
+                        { desc = 'Find Word ',  group = 'Label', action = 'Telescope live_grep',  key = 'w' },
+                    },
+                    footer = {}
                 }
             }
         end,
