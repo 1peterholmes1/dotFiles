@@ -24,4 +24,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.cmdheight = 0
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
