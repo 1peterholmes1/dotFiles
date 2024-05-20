@@ -77,6 +77,7 @@ alias ls='ls --color'
 alias v='nvim'
 alias c='clear'
 alias laz='lazygit'
+alias l='ls -la --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
