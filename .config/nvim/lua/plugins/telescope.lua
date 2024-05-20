@@ -15,6 +15,7 @@ return {
                     additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
                 }
             end)
+            vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
         end
     },
 }

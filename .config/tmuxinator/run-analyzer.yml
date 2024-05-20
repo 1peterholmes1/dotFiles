@@ -45,7 +45,7 @@ root: ~/beckent/run-analyzer
 # attach: false
 
 windows:
-  - editor:
+  - vue:
       layout: main-horizontal
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
@@ -54,3 +54,9 @@ windows:
         - nvim
         - 
         - lazygit
+  - py:
+      root: ~/beckent/run-analyzer/src-py
+      layout: main-horizontal
+      panes:
+        - pipenv shell nvim
+        - pipenv shell zsh

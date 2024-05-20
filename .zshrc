@@ -78,6 +78,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+ssh-add ~/.ssh/id_ed25519
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
