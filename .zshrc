@@ -36,7 +36,7 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::npm
-zinit snippet OMZP::pipenv
+# zinit snippet OMZP::pipenv
 zinit snippet OMZP::command-not-found
 
 # Load completions
