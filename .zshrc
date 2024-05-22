@@ -11,6 +11,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # NOTE: SET PATH HERE
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="/Users/peter/Library/Python/3.9/bin:$VOLTA_HOME/bin:$PATH"
+export EDITOR=nvim
+
 # Set dir we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -78,6 +82,8 @@ alias v='nvim'
 alias c='clear'
 alias laz='lazygit'
 alias l='ls -la --color'
+alias pn='pnpm'
+alias mux='tmuxinator'
 
 # Shell integrations
 eval "$(fzf --zsh)"
