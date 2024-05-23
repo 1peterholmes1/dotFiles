@@ -25,12 +25,12 @@ return {
             require('copilot_cmp').setup()
         end
     },
-    -- {
-    --     "SmiteshP/nvim-navic",
-    --     config = function()
-    --         require('nvim-navic').setup()
-    --     end
-    -- },
+    {
+        "SmiteshP/nvim-navic",
+        config = function()
+            require('nvim-navic').setup()
+        end
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -45,11 +45,11 @@ return {
             'zbirenbaum/copilot.lua',
             'zbirenbaum/copilot-cmp.lua',
             'onsails/lspkind.nvim',
-            -- "SmiteshP/nvim-navic",
+            "SmiteshP/nvim-navic",
         },
         config = function()
             local lsp_zero = require('lsp-zero')
-            -- local navic = require('nvim-navic')
+            local navic = require('nvim-navic')
 
             local function allow_format(servers)
                 return function(client) return vim.tbl_contains(servers, client.name) end
@@ -83,9 +83,14 @@ return {
                     vim.lsp.buf.rename()
                 end, opts)
 
-                -- navic.attach(client, bufnr)
+                local non_navic_clients = { copilot = true, tailwindcss = true, emmet_ls = true }
+                if not non_navic_clients[client.name] then
+                    navic.attach(client, bufnr)
+                end
 
-                lsp_zero.buffer_autoformat()
+                if vim.bo.filetype ~= 'javascript' then
+                    lsp_zero.buffer_autoformat()
+                end
             end)
 
             lsp_zero.set_sign_icons({

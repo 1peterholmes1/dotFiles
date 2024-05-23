@@ -4,14 +4,12 @@ return {
         dependencies = {
             'catppuccin/nvim',
             'nvim-tree/nvim-web-devicons',
-            -- 'SmiteshP/nvim-navic',
+            'SmiteshP/nvim-navic',
             'lewis6991/gitsigns.nvim',
             'VonHeikemen/lsp-zero.nvim',
         },
         event = "BufEnter",
         config = function()
-            -- TODO: Figure out color scheming
-            local scheme = require('catppuccin.palettes').get_palette 'mocha'
             local conditions = require("heirline.conditions")
             local utils = require("heirline.utils")
             local function setup_colors()
@@ -37,6 +35,17 @@ return {
             end
 
             utils.on_colorscheme(setup_colors)
+            local colors = setup_colors()
+
+            require('heirline').load_colors(setup_colors())
+
+            vim.api.nvim_create_augroup("Heirline", { clear = true })
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                callback = function()
+                    utils.on_colorscheme(setup_colors)
+                end,
+                group = "Heirline"
+            })
             -- require('heirline').load_colors(colors)
             local ViMode = {
                 -- get vim current mode, this information will be required by the provider
@@ -153,12 +162,14 @@ return {
                     return vim.v.hlsearch ~= 0 and vim.o.cmdheight == 0
                 end,
                 {
-                    provider = " ", hl = { bg = "green", fg = "black" }
+                    provider = "",
+                    hl = { fg = "green" }
                 },
                 SearchCount,
                 {
-                    provider = " ", hl = { bg = "green", fg = "black" }
-                }
+                    provider = "",
+                    hl = { fg = "green" }
+                },
             }
 
             local FileNameBlock = {
@@ -292,19 +303,15 @@ return {
                 hl        = { fg = "green", bold = true },
             }
 
-            -- TODO: setup Navic
-            -- Awesome plugin
-
-            -- The easy way.
-            -- local Navic = {
-            --     condition = function() return require("nvim-navic").is_available() end,
-            --     provider = function()
-            --         print(require('nvim-navic').get_location())
-            --         return require("nvim-navic").get_location({ highlight = true })
-            --     end,
-            --     update = 'CursorMoved'
-            -- }
-            --
+            -- TODO: improve navic?
+            local Navic = {
+                condition = function() return require("nvim-navic").is_available() end,
+                provider = function()
+                    -- print(require('nvim-navic').get_location())
+                    return require("nvim-navic").get_location({ highlight = true })
+                end,
+                update = 'CursorMoved'
+            }
             -- -- Full nerd (with icon colors and clickable elements)!
             -- -- works in multi window, but does not support flexible components (yet ...)
             -- local Navic = {
@@ -422,9 +429,10 @@ return {
                 update = { "DiagnosticChanged", "BufEnter" },
 
                 {
-                    provider = " ",
-                    hl = { bg = "gray", fg = "black" }
+                    provider = "",
+                    hl = { fg = "gray" }
                 },
+
                 {
                     provider = function(self)
                         -- 0 is just another output, we can decide to print it or not!
@@ -451,8 +459,8 @@ return {
                     hl = { fg = "diag_hint", bg = "gray" },
                 },
                 {
-                    provider = " ",
-                    hl = { fg = "black", bg = "gray" }
+                    provider = "",
+                    hl = { fg = "gray" }
                 },
             }
 
@@ -465,7 +473,7 @@ return {
                         self.status_dict.changed ~= 0
                 end,
 
-                hl = { fg = "orange", bg = "gray" },
+                hl = { fg = colors.bright_fg, bg = "gray" },
 
                 { -- git branch name
                     provider = function(self)
@@ -505,11 +513,11 @@ return {
                     condition = function(self)
                         return self.has_changes
                     end,
-                    provider = ")",
+                    provider = ") ",
                 },
                 {
-                    provider = " ",
-                    hl = { fg = "black", bg = "gray" }
+                    provider = "",
+                    hl = { fg = "gray", bg = "" }
                 }
             }
             local Align = { provider = '%=' }
@@ -542,8 +550,42 @@ return {
 
             require('heirline').setup({
                 statusline = DefaultStatusLine,
-                -- winbar = { Navic }
+                winbar = { Navic }
             })
         end
     },
+    {
+        "b0o/incline.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            local helpers = require 'incline.helpers'
+            local devicons = require 'nvim-web-devicons'
+            require('incline').setup {
+                window = {
+                    padding = 0,
+                    margin = { horizontal = 0 },
+                },
+                render = function(props)
+                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+                    if filename == 0 then
+                        filename = '[No Name]'
+                    end
+                    local ft_icon, ft_color = devicons.get_icon_color(filename)
+                    local modified = vim.bo[props.buf].modified
+                    if not ft_color then
+                        ft_color = helpers.get_highlight('Directory').fg
+                    end
+                    return {
+                        ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or
+                        '',
+                        ' ',
+                        { filename, gui = modified and 'bold,italic' or 'bold' },
+                        ' ',
+                    }
+                end
+            }
+        end,
+    }
 }

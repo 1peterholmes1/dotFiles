@@ -10,6 +10,7 @@ return {
                     svelte = { css = true, tailwind = true },
                     javascript = { css = true, tailwind = true },
                     typescript = { css = true, tailwind = true },
+                    '*'
                 }
             })
         end
