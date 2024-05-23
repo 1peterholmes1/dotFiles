@@ -83,7 +83,7 @@ return {
                     vim.lsp.buf.rename()
                 end, opts)
 
-                local non_navic_clients = { copilot = true, tailwindcss = true, emmet_ls = true }
+                local non_navic_clients = { copilot = true, tailwindcss = true, emmet_ls = true, eslint = true }
                 if not non_navic_clients[client.name] then
                     navic.attach(client, bufnr)
                 end
