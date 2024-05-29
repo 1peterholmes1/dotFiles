@@ -19,7 +19,7 @@ return {
         end
     },
     {
-        'zbirenbaum/copilot-cmp.lua',
+        'zbirenbaum/copilot-cmp',
         dependencies = { 'zbirenbaum/copilot.lua' },
         config = function()
             require('copilot_cmp').setup()
@@ -43,7 +43,7 @@ return {
             'L3MON4D3/LuaSnip',
             'hrsh7th/cmp-buffer',
             'zbirenbaum/copilot.lua',
-            'zbirenbaum/copilot-cmp.lua',
+            'zbirenbaum/copilot-cmp',
             'onsails/lspkind.nvim',
             "SmiteshP/nvim-navic",
         },
