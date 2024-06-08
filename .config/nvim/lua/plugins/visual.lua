@@ -3,15 +3,23 @@ return {
         "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup({
-                filetypes = {
-                    css = { css = true },
-                    html = { css = true },
-                    vue = { css = true, tailwind = true },
-                    svelte = { css = true, tailwind = true },
-                    javascript = { css = true, tailwind = true },
-                    typescript = { css = true, tailwind = true },
-                    '*'
-                }
+                -- filetypes = {
+                --     css = { css = true },
+                --     html = { css = true },
+                --     vue = { names = false, tailwind = true },
+                --     svelte = { css = true, tailwind = true },
+                --     javascript = { css = true, tailwind = true },
+                --     typescript = { css = true, tailwind = true },
+                -- }
+                user_default_options = {
+                    RGB = true,
+                    RRGGBB = true,
+                    RRGGBBAA = true,
+                    names = false,
+                    css_fn = true,
+                    tailwind = true
+                },
+                filetypes = { '*' }
             })
         end
     },

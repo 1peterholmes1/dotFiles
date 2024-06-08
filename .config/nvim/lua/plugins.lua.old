@@ -43,7 +43,7 @@ local plugins = {
         config = true
     },
     {
-        'nvim-tree/nvim-web-devicons'
+        'nvim-tree/nvim-web-devicons',
     },
     {
         'nvimdev/dashboard-nvim',

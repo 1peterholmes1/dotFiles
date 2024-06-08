@@ -99,24 +99,24 @@ return {
                 hint = '󰌵',
                 info = '󰙎'
             })
-            local util = require 'lspconfig.util'
-            local function get_typescript_server_path(root_dir)
-                local global_ts = '/Users/peter/.volta/tools/shared/typescript/lib'
-                -- Alternative location if installed as root:
-                -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
-                local found_ts = ''
-                local function check_dir(path)
-                    found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
-                    if util.path.exists(found_ts) then
-                        return path
-                    end
-                end
-                if util.search_ancestors(root_dir, check_dir) then
-                    return found_ts
-                else
-                    return global_ts
-                end
-            end
+            -- local util = require 'lspconfig.util'
+            -- local function get_typescript_server_path(root_dir)
+            --     local global_ts = '/Users/peter/.volta/tools/shared/typescript/lib'
+            --     -- Alternative location if installed as root:
+            --     -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+            --     local found_ts = ''
+            --     local function check_dir(path)
+            --         found_ts = util.path.join(path, 'node_modules', 'typescript', 'lib')
+            --         if util.path.exists(found_ts) then
+            --             return path
+            --         end
+            --     end
+            --     if util.search_ancestors(root_dir, check_dir) then
+            --         return found_ts
+            --     else
+            --         return global_ts
+            --     end
+            -- end
 
             -- require 'lspconfig'.volar.setup {
             --     on_new_config = function(new_config, new_root_dir)
@@ -129,6 +129,55 @@ return {
             require('mason-lspconfig').setup({
                 ensure_installed = { 'tsserver', 'eslint', 'volar' },
                 handlers = {
+                    function(server_name)
+                        require('lspconfig')[server_name].setup({})
+                    end,
+                    volar = function()
+                        -- TODO: Fix this to use the correct tsdk - also make sure tsserver doesn't run when volar is running https://github.com/williamboman/mason-lspconfig.nvim/issues/371
+                        local tsServerPath = require('mason-registry')
+                            .get_package('typescript-language-server')
+                            :get_install_path()
+
+                        require('lspconfig').volar.setup({
+                            filetypes = { 'vue' },
+                            init_options = {
+                                vue = {
+                                    hybridMode = false
+                                },
+                                typescript = {
+                                    tsdk = tsServerPath
+                                }
+                            }
+                        })
+                    end,
+                    tsserver = function()
+                        local vue_typescript_plugin = require('mason-registry')
+                            .get_package('vue-language-server')
+                            :get_install_path()
+                            .. '/node_modules/@vue/language-server'
+                            .. '/node_modules/@vue/typescript-plugin'
+
+                        require('lspconfig').tsserver.setup({
+                            init_options = {
+                                plugins = {
+                                    {
+                                        name = '@vue/typescript-plugin',
+                                        location = vue_typescript_plugin,
+                                        languages = { 'javascript', 'typescript', 'vue' }
+                                    }
+                                }
+                            },
+                            filetypes = {
+                                'javascript',
+                                'javascriptreact',
+                                'javascript.jsx',
+                                'typescript',
+                                'typescriptreact',
+                                'typescript.tsx',
+                                'vue'
+                            }
+                        })
+                    end,
                     lsp_zero.default_setup,
                     lua_ls = function()
                         require('lspconfig').lua_ls.setup({
