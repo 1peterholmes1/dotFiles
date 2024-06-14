@@ -57,12 +57,12 @@ windows:
         - laz
   - old: 
       layout: main-horizontal
-      root: ~/beckent/data-portal/old-data-portal
+      root: ~/beckent/data-portal/data-portal
       panes:
         - nvim
         - 
   - db:
       layout: main-horizontal
-      root: ~/beckent/data-portal/old-data-portal
+      root: ~/beckent/data-portal/data-portal
       panes:
         - docker compose up

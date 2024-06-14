@@ -16,6 +16,11 @@ return {
                 }
             end)
             vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
+            vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+            vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
+            vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
+            vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, {})
+            vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols, {})
         end
     },
 }
