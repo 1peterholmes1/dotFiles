@@ -8,6 +8,16 @@ return {
     { 'hrsh7th/cmp-buffer' },
     { 'onsails/lspkind.nvim' },
     {
+        'supermaven-inc/supermaven-nvim',
+        config = function()
+            require('supermaven-nvim').setup({
+                disable_keymaps = true,
+                disable_inline_completion = true,
+                log_level = 'off',
+            })
+        end,
+    },
+    {
         'zbirenbaum/copilot.lua',
         cmd = "Copilot",
         event = "InsertEnter",
@@ -222,7 +232,8 @@ return {
 
             lspkind.init({
                 symbol_map = {
-                    Copilot = ''
+                    Copilot = '',
+                    Supermaven = '󰫺'
                 }
             })
 
@@ -246,7 +257,8 @@ return {
                     { name = "nvim_lsp" },
                     { name = "copilot" },
                     { name = "luasnip" },
-                    { name = "buffer" }
+                    { name = "buffer" },
+                    { name = "supermaven" }
 
                 },
                 formatting = {

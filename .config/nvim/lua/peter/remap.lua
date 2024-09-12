@@ -21,3 +21,6 @@ vim.keymap.set("n", "\\", '<Cmd>split<CR>')
 vim.keymap.set("n", "<leader>nh", "<Cmd>noh<CR>")
 
 vim.keymap.set("n", "<leader>bb", "<C-^>")
+
+vim.keymap.set('n', ']q', '<Cmd>cn<CR>')
+vim.keymap.set('n', '[q', '<Cmd>cp<CR>')
