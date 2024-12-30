@@ -1,0 +1,3 @@
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+cursor-style = block
+window-padding-color = extend
