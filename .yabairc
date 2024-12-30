@@ -50,6 +50,8 @@ yabai -m config                                 \
 yabai -m rule --add app="Stats" manage=off
 yabai -m rule --add app="Flow" manage=off
 yabai -m rule --add app="iTerm2" title="Timer*" manage=off 
+yabai -m rule --add app="XCode" manage=off
+yabai -m rule --add app="Simulator" manage=off
 yabai -m rule --add app="System Preferences" manage=off
 yabai -m rule --add app="Vivaldi" title="Picture in Picture" manage=off
 yabai -m rule --add app="Calendar" title="" manage=off
