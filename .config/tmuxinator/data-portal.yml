@@ -1,7 +1,7 @@
 # /Users/peter/.config/tmuxinator/data-portal.yml
 
 name: data-portal
-root: ~/beckent/data-portal
+root: ~/beckent/data-portal/data-portal
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,19 +45,21 @@ root: ~/beckent/data-portal
 # attach: false
 
 windows:
-  - new:
+  - v9:
       layout: main-horizontal
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
-      root: ~/beckent/data-portal/new-data-portal
+      root: ~/beckent/data-portal/data-portal/
       panes:
         - nvim
         - 
-        - laz
-  - old: 
+        - cd apps/frontend
+        - cd apps/api
+        - 
+  - v8: 
       layout: main-horizontal
-      root: ~/beckent/data-portal/data-portal
+      root: ~/beckent/data-portal/v8-worktree/
       panes:
         - nvim
         - 
