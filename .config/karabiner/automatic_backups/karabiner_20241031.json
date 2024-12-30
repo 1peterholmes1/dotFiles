@@ -41,10 +41,6 @@
                 {
                     "from": { "key_code": "caps_lock" },
                     "to": [{ "key_code": "escape" }]
-                },
-                {
-                    "from": { "key_code": "home" },
-                    "to": [{ "consumer_key_code": "play_or_pause" }]
                 }
             ],
             "virtual_hid_keyboard": {
