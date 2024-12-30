@@ -17,24 +17,24 @@ return {
             })
         end,
     },
-    {
-        'zbirenbaum/copilot.lua',
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require('copilot').setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false }
-            })
-        end
-    },
-    {
-        'zbirenbaum/copilot-cmp',
-        dependencies = { 'zbirenbaum/copilot.lua' },
-        config = function()
-            require('copilot_cmp').setup()
-        end
-    },
+    -- {
+    --     'zbirenbaum/copilot.lua',
+    --     cmd = "Copilot",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require('copilot').setup({
+    --             suggestion = { enabled = false },
+    --             panel = { enabled = false }
+    --         })
+    --     end
+    -- },
+    -- {
+    --     'zbirenbaum/copilot-cmp',
+    --     dependencies = { 'zbirenbaum/copilot.lua' },
+    --     config = function()
+    --         require('copilot_cmp').setup()
+    --     end
+    -- },
     {
         "SmiteshP/nvim-navic",
         config = function()
@@ -52,8 +52,8 @@ return {
             'hrsh7th/nvim-cmp',
             'L3MON4D3/LuaSnip',
             'hrsh7th/cmp-buffer',
-            'zbirenbaum/copilot.lua',
-            'zbirenbaum/copilot-cmp',
+            -- 'zbirenbaum/copilot.lua',
+            -- 'zbirenbaum/copilot-cmp',
             'onsails/lspkind.nvim',
             "SmiteshP/nvim-navic",
         },

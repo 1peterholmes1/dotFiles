@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "|", '<Cmd>vsplit<CR>')
 vim.keymap.set("n", "\\", '<Cmd>split<CR>')
 
-vim.keymap.set("n", "<leader>nh", "<Cmd>noh<CR>")
+vim.keymap.set("n", "<Esc>", "<Cmd>noh<CR>")
 
 vim.keymap.set("n", "<leader>bb", "<C-^>")
 
