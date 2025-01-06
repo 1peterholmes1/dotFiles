@@ -1,2 +1,4 @@
 .config/github-copilot/*
 .config/raycast/extensions/**/*
+.config/snaplet/*
+.config/iterm2/*
