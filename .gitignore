@@ -2,3 +2,5 @@
 .config/raycast/extensions/**/*
 .config/snaplet/*
 .config/iterm2/*
+.config/sanity/config.json
+.config/simple-update-notifier/nodemon.json

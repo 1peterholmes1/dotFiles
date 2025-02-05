@@ -33,6 +33,9 @@ return {
                 },
                 exclude = {
                     filetypes = { "dashboard" }
+                },
+                whitespace = {
+                    highlight = "SpecialKey",
                 }
             })
         end
@@ -73,5 +76,9 @@ return {
                 background_colour = '#000000',
             })
         end
+    },
+    {
+        'mcauley-penney/visual-whitespace.nvim',
+        config = true
     }
 }
