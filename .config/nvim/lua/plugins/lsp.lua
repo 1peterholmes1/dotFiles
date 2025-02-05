@@ -137,7 +137,9 @@ return {
             -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
             require('mason').setup({})
             require('mason-lspconfig').setup({
-                ensure_installed = { 'tsserver', 'eslint', 'volar' },
+                ensure_installed = {
+                    -- 'tsserver',
+                    'eslint', 'volar' },
                 handlers = {
                     function(server_name)
                         require('lspconfig')[server_name].setup({})
@@ -160,34 +162,34 @@ return {
                             }
                         })
                     end,
-                    tsserver = function()
-                        local vue_typescript_plugin = require('mason-registry')
-                            .get_package('vue-language-server')
-                            :get_install_path()
-                            .. '/node_modules/@vue/language-server'
-                            .. '/node_modules/@vue/typescript-plugin'
-
-                        require('lspconfig').tsserver.setup({
-                            init_options = {
-                                plugins = {
-                                    {
-                                        name = '@vue/typescript-plugin',
-                                        location = vue_typescript_plugin,
-                                        languages = { 'javascript', 'typescript', 'vue' }
-                                    }
-                                }
-                            },
-                            filetypes = {
-                                'javascript',
-                                'javascriptreact',
-                                'javascript.jsx',
-                                'typescript',
-                                'typescriptreact',
-                                'typescript.tsx',
-                                'vue'
-                            }
-                        })
-                    end,
+                    -- tsserver = function()
+                    --     local vue_typescript_plugin = require('mason-registry')
+                    --         .get_package('vue-language-server')
+                    --         :get_install_path()
+                    --         .. '/node_modules/@vue/language-server'
+                    --         .. '/node_modules/@vue/typescript-plugin'
+                    --
+                    --     require('lspconfig').tsserver.setup({
+                    --         init_options = {
+                    --             plugins = {
+                    --                 {
+                    --                     name = '@vue/typescript-plugin',
+                    --                     location = vue_typescript_plugin,
+                    --                     languages = { 'javascript', 'typescript', 'vue' }
+                    --                 }
+                    --             }
+                    --         },
+                    --         filetypes = {
+                    --             'javascript',
+                    --             'javascriptreact',
+                    --             'javascript.jsx',
+                    --             'typescript',
+                    --             'typescriptreact',
+                    --             'typescript.tsx',
+                    --             'vue'
+                    --         }
+                    --     })
+                    -- end,
                     lsp_zero.default_setup,
                     lua_ls = function()
                         require('lspconfig').lua_ls.setup({
