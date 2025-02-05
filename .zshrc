@@ -84,6 +84,7 @@ alias laz='lazygit'
 alias l='ls -la --color'
 alias pn='pnpm'
 alias mux='tmuxinator'
+alias pv='uv run nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -96,3 +97,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+. "$HOME/.local/bin/env"
