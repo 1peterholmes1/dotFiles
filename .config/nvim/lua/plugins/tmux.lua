@@ -1,5 +1,6 @@
 return {
     {
+        -- Navigate between tmux panes
         "christoomey/vim-tmux-navigator",
         -- lazy = false,
         cmd = {

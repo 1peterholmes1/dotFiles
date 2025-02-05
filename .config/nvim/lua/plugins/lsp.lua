@@ -36,6 +36,7 @@ return {
     --     end
     -- },
     {
+        -- Show scopes at the top of the screen
         "SmiteshP/nvim-navic",
         config = function()
             require('nvim-navic').setup()

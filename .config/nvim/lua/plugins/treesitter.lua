@@ -1,5 +1,6 @@
 return {
     {
+        -- Rename close and open tags for HTML style templating
         'windwp/nvim-ts-autotag',
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
@@ -10,6 +11,7 @@ return {
         end
     },
     {
+        -- Treesitter
         "nvim-treesitter/nvim-treesitter",
         build = function()
             require("nvim-treesitter.install").update({ with_sync = true })()

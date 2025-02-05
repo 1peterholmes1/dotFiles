@@ -1,5 +1,6 @@
 return {
     {
+        -- Displays a dashboard on startup
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
         config = function()

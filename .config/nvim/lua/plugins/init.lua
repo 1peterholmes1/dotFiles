@@ -1,6 +1,7 @@
 return {
     -- { "rose-pine/neovim",                 name = "rose-pine" },
     {
+        -- Automatically change color theme based on system
         "f-person/auto-dark-mode.nvim",
         opts = {
             update_interval = 3000,
@@ -15,6 +16,7 @@ return {
         }
     },
     {
+        -- Catppuccin theme
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
@@ -24,14 +26,17 @@ return {
         end
     },
     {
+        -- Automatically close open parentheses and brackets
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
     },
     {
+        -- Icons for filetypes
         'nvim-tree/nvim-web-devicons'
     },
     {
+        -- Shows lsp status updates in bottom right
         "j-hui/fidget.nvim",
         opts = {
             -- options
@@ -43,6 +48,7 @@ return {
         },
     },
     {
+        -- Adds the ability to view undo history
         'mbbill/undotree',
         config = function()
             vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)

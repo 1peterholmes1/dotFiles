@@ -1,5 +1,6 @@
 return {
     {
+        -- Adds background color to hex codes and rgb values
         "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup({
@@ -24,6 +25,7 @@ return {
         end
     },
     {
+        -- Adds columns to indicate indentation levels, highlights the indentation of current scope
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         config = function()
@@ -41,12 +43,14 @@ return {
         end
     },
     {
+        -- Sets the indentation settings for the current buffer
         "nmac427/guess-indent.nvim",
         config = function()
             require('guess-indent').setup {}
         end
     },
     {
+        -- Highlights occurences of the word/symbol under the cursor
         "RRethy/vim-illuminate",
         config = function()
             require('illuminate').configure({
@@ -57,6 +61,7 @@ return {
         end
     },
     {
+        -- Replaces the UI of the messages and command lines
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
@@ -78,6 +83,7 @@ return {
         end
     },
     {
+        -- Renders whitespace when in visual mode
         'mcauley-penney/visual-whitespace.nvim',
         config = true
     }

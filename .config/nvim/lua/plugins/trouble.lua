@@ -1,17 +1,42 @@
 return {
     {
+        -- Highlights TODO, FIXME, etc. comments
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim", 'folke/trouble.nvim' },
         opts = {
-            vim.keymap.set('n', '<leader>td', '<Cmd>TodoTrouble<CR>', {})
+            vim.keymap.set('n', '<leader>td', '<Cmd>TodoTrouble toggle<CR>', {})
         }
     },
     {
+        -- Displays diagnostics
         "folke/trouble.nvim",
+
+        opts = {
+            modes = {
+                diagnostics = {
+                    mode = "diagnostics",
+                    preview = {
+                        type = "split",
+                        relative = "win",
+                        position = "right",
+                        size = 0.3
+                    }
+                }
+            }
+        },
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            local trouble = require("trouble")
-            vim.keymap.set('n', '<leader>tt', function() trouble.toggle() end)
-        end
+        cmd = "Trouble",
+        keys = {
+            {
+                "<leader>tt",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)"
+            },
+            {
+                "<leader>cs",
+                "<cmd>Trouble symbols toggle focus=false<cr>",
+                desc = "Symbols (Trouble)",
+            },
+        }
     }
 }

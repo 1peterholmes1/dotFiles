@@ -1,5 +1,6 @@
 return {
     {
+        -- Toggles comments linewise
         'numToStr/Comment.nvim',
         opts = {
             -- add any options here

@@ -1,5 +1,6 @@
 return {
     {
+        -- Displays git info in the buffer
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup({
@@ -39,6 +40,7 @@ return {
         end
     },
     {
+        -- Git client within Neovim
         'NeogitOrg/neogit',
         dependencies = {
             "nvim-lua/plenary.nvim",
