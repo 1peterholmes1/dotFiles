@@ -38,8 +38,9 @@ return {
                                 end
                             }
                         end, key = 'W' },
-                        { desc = 'Toggle Tree ', group = 'Label', action = 'Neotree toggle', key = 'e' },
-                        { desc = 'Quit ',        group = 'Label', action = 'q',              key = 'q' },
+                        { desc = "Search Todos ", group = "Label", action = 'TodoTelescope',  key = 't' },
+                        { desc = 'Toggle Tree ',  group = 'Label', action = 'Neotree toggle', key = 'e' },
+                        { desc = 'Quit ',         group = 'Label', action = 'q',              key = 'q' },
                     },
                     footer = {}
                 }

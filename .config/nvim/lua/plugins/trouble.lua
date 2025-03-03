@@ -4,7 +4,8 @@ return {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim", 'folke/trouble.nvim' },
         opts = {
-            vim.keymap.set('n', '<leader>td', '<Cmd>TodoTrouble toggle<CR>', {})
+            vim.keymap.set('n', '<leader>td', '<Cmd>TodoTrouble toggle<CR>', {}),
+            vim.keymap.set('n', '<leader>ftd', '<Cmd>TodoTelescope<CR>', {})
         }
     },
     {
@@ -15,6 +16,15 @@ return {
             modes = {
                 diagnostics = {
                     mode = "diagnostics",
+                    preview = {
+                        type = "split",
+                        relative = "win",
+                        position = "right",
+                        size = 0.3
+                    }
+                },
+                todo = {
+                    mode = "todo",
                     preview = {
                         type = "split",
                         relative = "win",

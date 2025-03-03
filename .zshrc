@@ -85,6 +85,7 @@ alias l='ls -la --color'
 alias pn='pnpm'
 alias mux='tmuxinator'
 alias pv='uv run nvim'
+alias soffice='/Applications/LibreOffice.app/Contents/MacOS/soffice'
 
 # Shell integrations
 eval "$(fzf --zsh)"
