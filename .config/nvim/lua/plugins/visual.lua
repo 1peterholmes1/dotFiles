@@ -86,5 +86,53 @@ return {
         -- Renders whitespace when in visual mode
         'mcauley-penney/visual-whitespace.nvim',
         config = true
+    },
+    {
+        "folke/edgy.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.opt.laststatus = 3
+            vim.opt.splitkeep = "screen"
+        end,
+        opts = {
+            left = {
+                {
+                    title = "󰉋 Files",
+                    ft = "neo-tree",
+                    filter = function(buf)
+                        return vim.b[buf].neo_tree_source == "filesystem"
+                    end,
+                    size = { height = 0.5 }
+                },
+                {
+                    title = " Git",
+                    ft = "neo-tree",
+                    filter = function(buf)
+                        return vim.b[buf].neo_tree_source == "git_status"
+                    end,
+                    pinned = true,
+                    collapsed = true,
+                    open = "Neotree position=right git_status"
+                },
+                {
+                    title = " Open Buffers",
+                    ft = "neo-tree",
+                    filter = function(buf)
+                        return vim.b[buf].neo_tree_source == "buffers"
+                    end,
+                    pinned = true,
+                    collapsed = true,
+                    open = "Neotree position=top buffers"
+                },
+                "neo-tree"
+            },
+            right = {
+                {
+                    title = " Outline",
+                    pinned = true,
+                    ft = "Outline",
+                }
+            }
+        }
     }
 }

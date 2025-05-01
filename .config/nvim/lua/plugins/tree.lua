@@ -14,7 +14,7 @@ return {
                 close_if_last_window = true
             })
             vim.keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
-            vim.keymap.set("n", "<leader>o", "<Cmd>Neotree focus<CR>")
+            -- vim.keymap.set("n", "<leader>o", "<Cmd>Neotree focus<CR>")
         end
     }
 }

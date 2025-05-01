@@ -272,4 +272,21 @@ return {
             })
         end
     },
+    {
+        "hedyhli/outline.nvim",
+        keys = {
+            { "<leader>o", "<cmd>Outline<cr>", desc = "Show outline" }
+        },
+        config = function()
+            require("outline").setup {
+                symbols = {
+                    icons = {
+                        Function = {
+                            icon = '󰊕', hl = 'Function'
+                        }
+                    }
+                }
+            }
+        end
+    }
 }
